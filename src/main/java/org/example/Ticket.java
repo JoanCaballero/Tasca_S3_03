@@ -1,4 +1,6 @@
-package org.example.Entities;
+package org.example;
+
+import org.example.Entities.Product;
 
 import java.util.ArrayList;
 import java.util.List;

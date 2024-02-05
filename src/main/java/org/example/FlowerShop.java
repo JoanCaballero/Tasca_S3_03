@@ -1,7 +1,6 @@
 package org.example;
 
 import org.example.Entities.Product;
-import org.example.Entities.Ticket;
 
 import java.util.ArrayList;
 import java.util.HashMap;
