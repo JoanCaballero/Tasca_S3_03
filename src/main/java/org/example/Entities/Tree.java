@@ -17,7 +17,7 @@ public class Tree extends Product{
     }
 
     public double getHeight(){
-        return this.height;
+        return height;
     }
 
     public void setHeight(double height){

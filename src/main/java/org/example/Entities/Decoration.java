@@ -17,7 +17,7 @@ public class Decoration extends Product{
     }
 
     public boolean isWood(){
-        return this.wood;
+        return wood;
     }
 
     public void setWood(boolean wood){
