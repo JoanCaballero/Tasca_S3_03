@@ -4,13 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6f2d196c-7ffa-49f1-b793-52d137e35fff" name="Changes" comment="Prova push">
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/Entities/Ticket.java" afterDir="false" />
+    <list default="true" id="6f2d196c-7ffa-49f1-b793-52d137e35fff" name="Changes" comment="Ticket class">
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/FlowerShop.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Entities/Decoration.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Entities/Decoration.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Entities/Flower.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Entities/Flower.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Entities/Tree.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Entities/Tree.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/ProductFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/ProductFactory.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -70,7 +66,14 @@
       <option name="project" value="LOCAL" />
       <updated>1707134687883</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Ticket class">
+      <created>1707135650819</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1707135650819</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -86,6 +89,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Prova push" />
-    <option name="LAST_COMMIT_MESSAGE" value="Prova push" />
+    <MESSAGE value="Ticket class" />
+    <option name="LAST_COMMIT_MESSAGE" value="Ticket class" />
   </component>
 </project>
