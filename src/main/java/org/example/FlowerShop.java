@@ -31,7 +31,37 @@ public class FlowerShop {
         productMap.put("Decoration", 0);
     }
 
-    public void add(){
+    public void addStock(Product product){
+        productList.add(product);
+        totalStockValue+= product.getPrice();
+        productMap.put(product.getType(), productMap.get(product.getType()) +1);
+    }
 
+    public void removeStock(Product product){
+        if(productList.contains(product)) {
+            productList.remove(product);
+            totalStockValue -= product.getPrice();
+            productMap.put(product.getType(), productMap.get(product.getType()) - 1);
+        }
+    }
+
+    public void showStock(){
+        productList.forEach(System.out::println);
+    }
+
+    public void addTicket(Ticket ticket){
+        ticketList.add(ticket);
+        totalEarnings += ticket.getPrice();
+    }
+
+    public void removeTicket(Ticket ticket){
+        if(ticketList.contains(ticket)) {
+            ticketList.remove(ticket);
+            totalEarnings -= ticket.getPrice();
+        }
+    }
+
+    public void showTickets(){
+        ticketList.forEach(System.out::println);
     }
 }
