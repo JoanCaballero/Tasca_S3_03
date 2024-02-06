@@ -1,6 +1,5 @@
 package org.example.Service;
 
-import java.util.ArrayList;
 import java.util.Scanner;
 
 import org.example.FlowerShop;
@@ -15,15 +14,12 @@ public class Program {
 	
 	public static void program() {
 		
-		int c = printingMenu();
-		
-	}
-		/*boolean chivato = true;
+		boolean chivato = true;
 		
 		while (chivato) {
-			chivato=menu(printingMenu());
+			chivato=menu(printingMenu(), chivato);
 		}		
-	} */
+	} 
 	
 	public static int printingMenu() {
 		Scanner sc = new Scanner(System.in);
@@ -53,20 +49,26 @@ public class Program {
 				addFlower(fs1, pedirString("Introduce el nombre de la flow"), pedirDouble("Introduce el precio"), pedirString("Introduce el color"));
 				break;
 			case 4:
-				addDecoration(fs1, pedirString("Introduce el nombre de la flow"), pedirDouble("Introduce el precio"));
+				addDecoration(fs1, pedirString("Introduce el nombre de la decoracion"), pedirDouble("Introduce el precio"));
 				break;
 			case 5:
 				listingStock();
 				break;
 			case 6:
+				removeTree();
 				break;
 			case 7:
+				removeFlower();
 				break;
 			case 8:
+				removeDecoration();
 				break;
 			case 9:
+				listingStockQuantitiesV1();
+				//listingStockQuantitiesV2();
 				break;
 			case 10:
+				listingTotalEarnings();
 				break;
 			case 11:
 				break;
@@ -92,7 +94,7 @@ public class Program {
 		System.out.println("Se ha creado el arbol correctamente");
 	}
 	
-	public static void removeTree(FlowerShop fs1) {
+	public static void removeTree() {
 		Scanner sc = new Scanner(System.in);
 
 		
@@ -102,17 +104,47 @@ public class Program {
 		System.out.println("Introduce el id del arbol que deseas eliminar");
 		int id = sc.nextInt();
 		
-		Product p = fs1.getProductList().get(searchProductId(id));
-		fs1.removeProductStock(p);
+		int indexPosition = searchProductId(id);
 		
-		System.out.println("Se ha eliminado la flor correctamente");
+		if (indexPosition==-1) {
+			System.out.println("El arbol no está en el stock.");
+		} else {
+
+			Product p = fs1.getProductList().get(indexPosition);
+			fs1.removeProductStock(p);
+			
+			System.out.println("Se ha eliminado el arbol correctamente");
 		}
+	}
 	
 	
 	public static void addFlower(FlowerShop fs1, String name, double price, String color) {
 		Product p = productFactory.createProduct("Flower", name, price, color);
 		fs1.addProductStock(p);
 		System.out.println("Se ha creado la flor correctamente");
+	}
+	
+	public static void removeFlower() {
+		Scanner sc = new Scanner(System.in);
+
+		
+		System.out.println("Este es el listado de flores");
+		fs1.flowerProductList();
+		
+		System.out.println("Introduce el id de la flor que deseas eliminar");
+		int id = sc.nextInt();
+		
+		int indexPosition = searchProductId(id);
+		
+		if (indexPosition==-1) {
+			System.out.println("La flor no está en el stock.");
+		} else {
+
+			Product p = fs1.getProductList().get(indexPosition);
+			fs1.removeProductStock(p);
+			
+			System.out.println("Se ha eliminado la flor correctamente");
+		}
 	}
 	
 	public static void addDecoration(FlowerShop fs1, String name, double price) {
@@ -128,6 +160,29 @@ public class Program {
 		System.out.println("Se ha creado la decoracion correctamente");
 	}
 	
+	public static void removeDecoration() {
+		Scanner sc = new Scanner(System.in);
+
+		
+		System.out.println("Este es el listado de flores");
+		fs1.decorationProductList();
+		
+		System.out.println("Introduce el id de la decoracion que deseas eliminar");
+		int id = sc.nextInt();
+		
+		int indexPosition = searchProductId(id);
+		
+		if (indexPosition==-1) {
+			System.out.println("La decoracion no está en el stock.");
+		} else {
+
+			Product p = fs1.getProductList().get(indexPosition);
+			fs1.removeProductStock(p);
+			
+			System.out.println("Se ha eliminado la decoracion correctamente");
+		}
+	}
+	
 	public static int searchProductId(int id) {
 		int indexPosition = -1;
 		int i = 0;
@@ -140,15 +195,29 @@ public class Program {
 		}
 		return indexPosition;
 	}
+	
 	public static void listingStock() {
 		fs1.productStockList();
+	}
+	
+	public static void listingStockQuantitiesV1() {
+		fs1.stockListQuantitiesV1();
+	}
+	
+	public static void listingStockQuantitiesV2() {
+		fs1.stockListQuantitiesV2();
+	}
+	
+	
+	public static void listingTotalEarnings() {
+		System.out.println("El valor total de la floristeria es de " + fs1.getTotalStockValue() + " €");
 	}
 	
 	// Metodo para pedir String 
 	static String pedirString(String mensaje) { 
 		Scanner sc = new Scanner(System.in);
 		System.out.println(mensaje);
-		return sc.nextLine().toUpperCase();
+		return sc.nextLine();
 	}
 		
 	// Metodo para pedir numero
