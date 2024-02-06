@@ -46,7 +46,7 @@ public class Program {
 				addTree(fs1, pedirString("Introduce el nombre del arbol"), pedirDouble("Introduce el precio"), pedirDouble("Introduce la altura"));
 				break;
 			case 3:
-				addFlower(fs1, pedirString("Introduce el nombre de la flow"), pedirDouble("Introduce el precio"), pedirString("Introduce el color"));
+				addFlower(fs1, pedirString("Introduce el nombre de la flor"), pedirDouble("Introduce el precio"), pedirString("Introduce el color"));
 				break;
 			case 4:
 				addDecoration(fs1, pedirString("Introduce el nombre de la decoracion"), pedirDouble("Introduce el precio"));
@@ -164,7 +164,7 @@ public class Program {
 		Scanner sc = new Scanner(System.in);
 
 		
-		System.out.println("Este es el listado de flores");
+		System.out.println("Este es el listado de objetos de decoracion");
 		fs1.decorationProductList();
 		
 		System.out.println("Introduce el id de la decoracion que deseas eliminar");
