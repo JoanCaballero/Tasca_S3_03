@@ -39,4 +39,11 @@ public abstract class Product {
     public void setType(String type) {
         this.type = type;
     }
+
+	@Override
+	public String toString() {
+		return "Product [id=" + id + ", name=" + name + ", type=" + type + ", price=" + price + "]";
+	}
+    
+    
 }
