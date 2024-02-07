@@ -125,34 +125,43 @@ public class FlowerShop {
 
 	public void createTicket(){
 		Ticket ticket = new Ticket();
-		int opcio = Program.pedirInt("""
-				1.- Añadir producto a la lista.
-				2.- Eliminar producto de la lista.
-				3.- Mostrar lista.
-				4.- Finalizar compra.""");
-		switch(opcio){
-			case 1-> addTicketProduct(ticket);
-			case 2-> removeTicketProduct(ticket);
-			case 3-> showTicketProductList(ticket);
-			case 4-> finalizeTicket(ticket);
-			default -> System.out.println("Valor introducido incorrectamente.");
-		}
+		int opcio;
+		do {
+			opcio = Program.pedirInt("""
+					1.- Añadir producto a la lista.
+					2.- Eliminar producto de la lista.
+					3.- Mostrar lista.
+					4.- Finalizar compra.""");
+			switch (opcio) {
+				case 1 -> addTicketProduct(ticket);
+				case 2 -> removeTicketProduct(ticket);
+				case 3 -> showTicketProductList(ticket);
+				case 4 -> finalizeTicket(ticket);
+				default -> System.out.println("Valor introducido incorrectamente.");
+			}
+		}while(opcio!=4);
 	}
 	public void addTicketProduct(Ticket ticket) {
 		System.out.println("A continuación te muestro el listado de productos a la venta:");
 		productStockList();
 		int indice = Program.searchProductId(Program.pedirInt("Añade el producto a tu compra mediante el ID."));
-		if(indice != -1){
-			Product p = productList.get(indice);
+		Product p = productList.get(indice);
+		if(indice != -1 && !ticket.getProducts().contains(p)){
 			ticket.addProduct(p);
+			System.out.println("Producto añadido correctamente.");
+		}else{
+			System.out.println("El producto no se ha podido añadir a la lista.");
 		}
 	}
 
 	public void removeTicketProduct(Ticket ticket){
 		int indice = Program.searchProductId(Program.pedirInt("Escribe el ID del producto que quieras eliminar de tu compra."));
-		if(indice != -1) {
-			Product p = productList.get(indice);
+		Product p = productList.get(indice);
+		if(indice != -1 && ticket.getProducts().contains(p)) {
 			ticket.removeProduct(p);
+			System.out.println("Producto elminado correctamente.");
+		}else{
+			System.out.println("No se ha podido elminiar el producto.");
 		}
 	}
 
@@ -166,6 +175,7 @@ public class FlowerShop {
 		}
 		if(!ticket.getProducts().isEmpty()) {
 			ticketList.add(ticket);
+			System.out.println("Compra realizada correctamente.");
 		}
 	}
 
