@@ -4,11 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6f2d196c-7ffa-49f1-b793-52d137e35fff" name="Changes" comment="FlowerShop &quot;acabada&quot;">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/FlowerShop.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/FlowerShop.java" afterDir="false" />
+    <list default="true" id="6f2d196c-7ffa-49f1-b793-52d137e35fff" name="Changes" comment="Crear Ticket, correccion encontrar product by id">
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Service/Program.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Service/Program.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Ticket.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Ticket.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -109,7 +106,14 @@
       <option name="project" value="LOCAL" />
       <updated>1707213729825</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Crear Ticket, correccion encontrar product by id">
+      <created>1707307563196</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1707307563196</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -128,6 +132,7 @@
     <MESSAGE value="Ticket class" />
     <MESSAGE value="FlowerShop inacabada" />
     <MESSAGE value="FlowerShop &quot;acabada&quot;" />
-    <option name="LAST_COMMIT_MESSAGE" value="FlowerShop &quot;acabada&quot;" />
+    <MESSAGE value="Crear Ticket, correccion encontrar product by id" />
+    <option name="LAST_COMMIT_MESSAGE" value="Crear Ticket, correccion encontrar product by id" />
   </component>
 </project>

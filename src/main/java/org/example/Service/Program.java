@@ -76,7 +76,7 @@ public class Program {
 				listingStockQuantitiesV2();
 				break;
 			case 10:
-				listingTotalEarnings();
+				listingTotalValue();
 				break;
 			case 11:
 				createTicket();
@@ -84,6 +84,7 @@ public class Program {
 			case 12:
 				break;
 			case 13:
+				listingTotalEarnings();
 				break;
 			case 0:
 				chivato=false;
@@ -208,8 +209,12 @@ public class Program {
 	}
 	
 	
+	public static void listingTotalValue() {
+		System.out.println("El valor total de la floristeria es de " + fs1.getTotalStockValue() + "€");
+	}
+
 	public static void listingTotalEarnings() {
-		System.out.println("El valor total de la floristeria es de " + fs1.getTotalStockValue() + " €");
+		System.out.println("El total de los productos vendidos en la floristeria asciende a " + fs1.getTotalEarnings() + "€");
 	}
 
 	public static void createTicket(){ fs1.createTicket();}
