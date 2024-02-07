@@ -5,6 +5,7 @@ import org.example.Entities.Flower;
 import org.example.Entities.Product;
 import org.example.Entities.Tree;
 import org.example.Service.Program;
+import org.example.txtConnection.TxtConnection;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -130,7 +131,7 @@ public class FlowerShop {
 			opcio = Program.pedirInt("""
 					1.- Añadir producto a la lista.
 					2.- Eliminar producto de la lista.
-					3.- Mostrar lista.
+					3.- Mostrar lista de productos seleccionados.
 					4.- Finalizar compra.""");
 			switch (opcio) {
 				case 1 -> addTicketProduct(ticket);
@@ -171,11 +172,17 @@ public class FlowerShop {
 
 	public void finalizeTicket(Ticket ticket){
 		for(Product p : ticket.getProducts()){
-			productList.remove(Program.searchProductId(p.getId()));
+			removeProductStock(p);
 		}
 		if(!ticket.getProducts().isEmpty()) {
-			ticketList.add(ticket);
+			addTicket(ticket);
 			System.out.println("Compra realizada correctamente.");
+			if (ticketList.size()==1) {
+				TxtConnection.txtDbCreation();
+				TxtConnection.txtDbWriting(ticket);
+			} else {
+				TxtConnection.txtDbWriting(ticket);
+			}
 		}
 	}
 
