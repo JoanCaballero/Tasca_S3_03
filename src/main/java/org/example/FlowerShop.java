@@ -4,6 +4,7 @@ import org.example.Entities.Decoration;
 import org.example.Entities.Flower;
 import org.example.Entities.Product;
 import org.example.Entities.Tree;
+import org.example.Service.Program;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -86,14 +87,14 @@ public class FlowerShop {
     public void addProductStock(Product p){
     	productList.add(p);
     	totalStockValue += p.getPrice();
-    	productMap.put(p.getType(), (int)productMap.get(p.getType()) +1);
+    	productMap.put(p.getType(), productMap.get(p.getType()) +1);
     }
     
     public void removeProductStock(Product p) {
     	if (productList.contains(p)) {
     		productList.remove(p);
     		totalStockValue -= p.getPrice();
-        	productMap.put(p.getType(), (int)productMap.get(p.getType()) -1);
+        	productMap.put(p.getType(), productMap.get(p.getType()) -1);
 
     	}
     }
@@ -102,24 +103,71 @@ public class FlowerShop {
     	if (productList.size()==0) {
     		System.out.println("Todavia no hay productos en stock");
     	} else {
-    		productList.stream().forEach(p -> System.out.println(p.toString()));
+    		productList.forEach(p -> System.out.println(p.toString()));
     	}
     }
     
     public void stockListQuantitiesV2() {
-    	productMap.forEach((key, value) -> System.out.println( key + " - " + value));;
+    	productMap.forEach((key, value) -> System.out.println( key + " - " + value));
     }
     
     public void treeProductList() {
-    	productList.stream().filter(p -> p instanceof Tree).forEach(p -> System.out.println(p.toString()));
+    	productList.stream().filter(p -> p instanceof Tree).forEach(System.out::println);
     }
     
     public void flowerProductList() {
-    	productList.stream().filter(p -> p instanceof Flower).forEach(p -> System.out.println(p.toString()));
+    	productList.stream().filter(p -> p instanceof Flower).forEach(System.out::println);
     }
     
     public void decorationProductList() {
-    	productList.stream().filter(p -> p instanceof Decoration).forEach(p -> System.out.println(p.toString()));
+		productList.stream().filter(p -> p instanceof Decoration).forEach(System.out::println);
+	}
+
+	public void createTicket(){
+		Ticket ticket = new Ticket();
+		int opcio = Program.pedirInt("""
+				1.- Añadir producto a la lista.
+				2.- Eliminar producto de la lista.
+				3.- Mostrar lista.
+				4.- Finalizar compra.""");
+		switch(opcio){
+			case 1-> addTicketProduct(ticket);
+			case 2-> removeTicketProduct(ticket);
+			case 3-> showTicketProductList(ticket);
+			case 4-> finalizeTicket(ticket);
+			default -> System.out.println("Valor introducido incorrectamente.");
+		}
+	}
+	public void addTicketProduct(Ticket ticket) {
+		System.out.println("A continuación te muestro el listado de productos a la venta:");
+		productStockList();
+		int indice = Program.searchProductId(Program.pedirInt("Añade el producto a tu compra mediante el ID."));
+		if(indice != -1){
+			Product p = productList.get(indice);
+			ticket.addProduct(p);
+		}
+	}
+
+	public void removeTicketProduct(Ticket ticket){
+		int indice = Program.searchProductId(Program.pedirInt("Escribe el ID del producto que quieras eliminar de tu compra."));
+		if(indice != -1) {
+			Product p = productList.get(indice);
+			ticket.removeProduct(p);
+		}
+	}
+
+	public void showTicketProductList(Ticket ticket){
+		ticket.getProducts().forEach(System.out::println);
+	}
+
+	public void finalizeTicket(Ticket ticket){
+		for(Product p : ticket.getProducts()){
+			productList.remove(Program.searchProductId(p.getId()));
+		}
+		if(!ticket.getProducts().isEmpty()) {
+			ticketList.add(ticket);
+		}
+	}
 
     public void addTicket(Ticket ticket){
         ticketList.add(ticket);

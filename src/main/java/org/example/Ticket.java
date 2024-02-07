@@ -38,6 +38,8 @@ public class Ticket {
         return price;
     }
 
+
+
     public void addProduct(Product p){
         products.add(p);
         price += p.getPrice();
