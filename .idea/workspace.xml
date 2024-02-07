@@ -4,10 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6f2d196c-7ffa-49f1-b793-52d137e35fff" name="Changes" comment="FlowerShop inacabada">
-      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/FlowerShop.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/FlowerShop.java" afterDir="false" />
+    <list default="true" id="6f2d196c-7ffa-49f1-b793-52d137e35fff" name="Changes" comment="Crear Ticket, correccion encontrar product by id">
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Service/Program.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Service/Program.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -27,6 +25,11 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="master" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="MarkdownSettingsMigration">
@@ -41,7 +44,8 @@
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/formacio/Desktop/JC/ProvaNivell_JoanCaballero&quot;
   }
 }</component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -95,7 +99,21 @@
       <option name="project" value="LOCAL" />
       <updated>1707136819977</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="FlowerShop &quot;acabada&quot;">
+      <created>1707213729825</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1707213729825</updated>
+    </task>
+    <task id="LOCAL-00008" summary="Crear Ticket, correccion encontrar product by id">
+      <created>1707307563196</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1707307563196</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -113,6 +131,8 @@
     <MESSAGE value="Prova push" />
     <MESSAGE value="Ticket class" />
     <MESSAGE value="FlowerShop inacabada" />
-    <option name="LAST_COMMIT_MESSAGE" value="FlowerShop inacabada" />
+    <MESSAGE value="FlowerShop &quot;acabada&quot;" />
+    <MESSAGE value="Crear Ticket, correccion encontrar product by id" />
+    <option name="LAST_COMMIT_MESSAGE" value="Crear Ticket, correccion encontrar product by id" />
   </component>
 </project>

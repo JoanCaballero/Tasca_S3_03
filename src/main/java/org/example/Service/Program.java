@@ -24,15 +24,24 @@ public class Program {
 	public static int printingMenu() {
 		Scanner sc = new Scanner(System.in);
 		
-		System.out.println("Bienvenido a la aplicacion de gestion de floristerias.\n"
-				+ "Seleccione una de las opciones disponibles:\n"
-				+ "1. Crear floristeria\n" + "2. Añadir Arbol\n"
-				+ "3. Añadir Flor\n" + "4. Añadir Decoracion\n"
-				+ "5. Imprimir Stock\n" + "6. Retirar Arbol\n"
-				+ "7. Retirar Flor\n" + "8. Retirar Decoracion\n"
-				+ "9. Imprimir Stock con cantidades\n" + "10. Imprimir valor total de la floristeria\n"
-				+ "11. Crear ticket de compra\n" + "12. Mostrar compras antiguas\n"
-				+ "13. Mostrar total de ingresos\n" + "0. Salir de la aplicacion\n");
+		System.out.println("""
+				Bienvenido a la aplicacion de gestion de floristerias.
+				Seleccione una de las opciones disponibles:
+				1. Crear floristeria
+				2. Añadir Arbol
+				3. Añadir Flor
+				4. Añadir Decoracion
+				5. Imprimir Stock
+				6. Retirar Arbol
+				7. Retirar Flor
+				8. Retirar Decoracion
+				9. Imprimir Stock con cantidades
+				10. Imprimir valor total de la floristeria
+				11. Crear ticket de compra
+				12. Mostrar compras antiguas
+				13. Mostrar total de ingresos
+				0. Salir de la aplicacion
+				""");
 
 		return sc.nextInt();
 	}
@@ -64,17 +73,18 @@ public class Program {
 				removeDecoration();
 				break;
 			case 9:
-				listingStockQuantitiesV1();
-				//listingStockQuantitiesV2();
+				listingStockQuantitiesV2();
 				break;
 			case 10:
-				listingTotalEarnings();
+				listingTotalValue();
 				break;
 			case 11:
+				createTicket();
 				break;
 			case 12:
 				break;
 			case 13:
+				listingTotalEarnings();
 				break;
 			case 0:
 				chivato=false;
@@ -106,10 +116,7 @@ public class Program {
 		
 		int indexPosition = searchProductId(id);
 		
-		if (indexPosition==-1) {
-			System.out.println("El arbol no está en el stock.");
-		} else {
-
+		if (indexPosition!=-1) {
 			Product p = fs1.getProductList().get(indexPosition);
 			fs1.removeProductStock(p);
 			
@@ -136,10 +143,7 @@ public class Program {
 		
 		int indexPosition = searchProductId(id);
 		
-		if (indexPosition==-1) {
-			System.out.println("La flor no está en el stock.");
-		} else {
-
+		if (indexPosition!=-1) {
 			Product p = fs1.getProductList().get(indexPosition);
 			fs1.removeProductStock(p);
 			
@@ -172,10 +176,7 @@ public class Program {
 		
 		int indexPosition = searchProductId(id);
 		
-		if (indexPosition==-1) {
-			System.out.println("La decoracion no está en el stock.");
-		} else {
-
+		if (indexPosition!=-1) {
 			Product p = fs1.getProductList().get(indexPosition);
 			fs1.removeProductStock(p);
 			
@@ -193,6 +194,9 @@ public class Program {
 			}
 			i++;
 		}
+		if(indexPosition == -1){
+			System.out.println("El producto seleccionado no está en el stock.");
+		}
 		return indexPosition;
 	}
 	
@@ -200,18 +204,20 @@ public class Program {
 		fs1.productStockList();
 	}
 	
-	public static void listingStockQuantitiesV1() {
-		fs1.stockListQuantitiesV1();
-	}
-	
 	public static void listingStockQuantitiesV2() {
 		fs1.stockListQuantitiesV2();
 	}
 	
 	
-	public static void listingTotalEarnings() {
-		System.out.println("El valor total de la floristeria es de " + fs1.getTotalStockValue() + " €");
+	public static void listingTotalValue() {
+		System.out.println("El valor total de la floristeria es de " + fs1.getTotalStockValue() + "€");
 	}
+
+	public static void listingTotalEarnings() {
+		System.out.println("El total de los productos vendidos en la floristeria asciende a " + fs1.getTotalEarnings() + "€");
+	}
+
+	public static void createTicket(){ fs1.createTicket();}
 	
 	// Metodo para pedir String 
 	static String pedirString(String mensaje) { 
@@ -221,7 +227,7 @@ public class Program {
 	}
 		
 	// Metodo para pedir numero
-	static int pedirInt(String mensaje) {
+	public static int pedirInt(String mensaje) {
 		Scanner sc = new Scanner(System.in);
 		System.out.println(mensaje);
 		return sc.nextInt();
