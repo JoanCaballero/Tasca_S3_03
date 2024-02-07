@@ -125,14 +125,16 @@ public class Program {
 		
 		int indexPosition = searchProductId(id);
 		
-		Product p = fs1.getProductList().get(indexPosition);
+		if (indexPosition!=-1) {
+			Product p = fs1.getProductList().get(indexPosition);
 		
-		if (!(p instanceof Tree)) {
-			System.out.println("No estas seleccionando un arbol");
-		} else {
-			fs1.removeProductStock(p);
-			System.out.println("Se ha eliminado el arbol correctamente");
-		} 
+			if (!(p instanceof Tree)) {
+				System.out.println("No estas seleccionando un arbol");
+			} else {
+				fs1.removeProductStock(p);
+				System.out.println("Se ha eliminado el arbol correctamente");
+			}
+		}
 	}
 	
 	
@@ -153,15 +155,17 @@ public class Program {
 		int id = sc.nextInt();
 		
 		int indexPosition = searchProductId(id);
+				
+		if (indexPosition!=-1) {
+			Product p = fs1.getProductList().get(indexPosition);
 		
-		Product p = fs1.getProductList().get(indexPosition);
-		
-		if (!(p instanceof Flower)) {
-			System.out.println("No estas seleccionando una flor");
-		} else {
-			fs1.removeProductStock(p);
-			System.out.println("Se ha eliminado la flor correctamente");
-		} 
+			if (!(p instanceof Flower)) {
+				System.out.println("No estas seleccionando una flor");
+			} else {
+				fs1.removeProductStock(p);
+				System.out.println("Se ha eliminado la flor correctamente");
+			}
+		}
 	}
 	
 	public static void addDecoration(FlowerShop fs1, String name, double price) {
@@ -189,14 +193,16 @@ public class Program {
 		
 		int indexPosition = searchProductId(id);
 		
-		Product p = fs1.getProductList().get(indexPosition);
+		if (indexPosition!=-1) {
+			Product p = fs1.getProductList().get(indexPosition);
 		
-		if (!(p instanceof Decoration)) {
-			System.out.println("No estas seleccionando un objeto decoracion");
-		} else {
-			fs1.removeProductStock(p);
-			System.out.println("Se ha eliminado el objeto decoracion correctamente");
-		} 
+			if (!(p instanceof Decoration)) {
+				System.out.println("No estas seleccionando un objeto decoracion");
+			} else {
+				fs1.removeProductStock(p);
+				System.out.println("Se ha eliminado el objeto decoracion correctamente");
+			}
+		}
 	}
 	
 	public static int searchProductId(int id) {
