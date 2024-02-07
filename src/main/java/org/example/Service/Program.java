@@ -103,14 +103,14 @@ public class Program {
 			fs1.setName(pedirString("Introduce el nombre de la floristeria"));
 			System.out.println("Se ha creado la floristeria correctamente");
 		} else {
-			System.out.println("Ya existe una floristeria");
+			System.out.println("Ya existe una floristeria. Introduce productos.");
 		}
 	}
 	
 	public static void addTree(FlowerShop fs1, String name, double price, double height) {
 		Product p = productFactory.createProduct("Tree", name, price, height);
 		fs1.addProductStock(p);
-		System.out.println("Se ha creado el arbol correctamente");
+		System.out.println("Se ha creado el " + p.getName() + " correctamente");
 	}
 	
 	public static void removeTree() {
@@ -141,7 +141,7 @@ public class Program {
 	public static void addFlower(FlowerShop fs1, String name, double price, String color) {
 		Product p = productFactory.createProduct("Flower", name, price, color);
 		fs1.addProductStock(p);
-		System.out.println("Se ha creado la flor correctamente");
+		System.out.println("Se ha creado la " + p.getName() + " correctamente");
 	}
 	
 	public static void removeFlower() {
