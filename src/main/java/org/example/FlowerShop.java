@@ -82,7 +82,7 @@ public class FlowerShop {
         productMap.put("Flower", 0);
         productMap.put("Decoration", 0);
     }
-
+  
     public void addProductStock(Product p){
     	productList.add(p);
     	totalStockValue += p.getPrice();
@@ -106,28 +106,6 @@ public class FlowerShop {
     	}
     }
     
-    public void stockListQuantitiesV1() {
-    	int treeQuantities=0;
-     	int flowerQuantities=0;
-     	int decorationQuantities=0;
-     	
-     	if (productList.size()==0) {
-    		System.out.println("Todavia no hay productos en stock");
-    	} else {
-	    	for (int i = 0; i<productList.size(); i++) {
-	    		if (productList.get(i) instanceof Tree) {
-	    			treeQuantities++;
-	    		} else if (productList.get(i) instanceof Flower) {
-	    			flowerQuantities++;
-	    		} else {
-	    			decorationQuantities++;
-	    		}
-	    	}
-    	
-	    	System.out.println("Arboles - " + treeQuantities + " | Flores - " + flowerQuantities + " | Decoracion - " + decorationQuantities);
-	    }
-    }
-    
     public void stockListQuantitiesV2() {
     	productMap.forEach((key, value) -> System.out.println( key + " - " + value));;
     }
@@ -142,6 +120,21 @@ public class FlowerShop {
     
     public void decorationProductList() {
     	productList.stream().filter(p -> p instanceof Decoration).forEach(p -> System.out.println(p.toString()));
+
+    public void addTicket(Ticket ticket){
+        ticketList.add(ticket);
+        totalEarnings += ticket.getPrice();
+    }
+
+    public void removeTicket(Ticket ticket){
+        if(ticketList.contains(ticket)) {
+            ticketList.remove(ticket);
+            totalEarnings -= ticket.getPrice();
+        }
+    }
+
+    public void showTickets(){
+        ticketList.forEach(System.out::println);
     }
     
     
