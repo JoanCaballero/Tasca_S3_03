@@ -2,6 +2,8 @@ package org.example;
 
 import org.example.Entities.Product;
 
+import java.sql.Timestamp;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -64,17 +66,26 @@ public class Ticket {
 
     public String TicketStringBuilder(){
         StringBuilder stringBuilder = new StringBuilder();
+        setProductString();
         stringBuilder.append("ID = ").append(this.id).append(" | [").append(this.productString);
 
-        for (int i = 0; i < products.size(); i++) {
-            stringBuilder.append("(").append(i + 1).append(")").append(products.get(i).getName());
-            if (i < products.size() - 1) {
-                stringBuilder.append(", ");
-            }
-        }
-
         stringBuilder.append("] | TOTAL: ").append(((float) Math.round(this.price * 100) / 100)).append("€");
-
+        Timestamp timestamp = new Timestamp(System.currentTimeMillis());
+//        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("dd/MM/yyyy");
+//        stringBuilder.append(" Fecha de la compra: ").append(simpleDateFormat.format(timestamp));
+//        stringBuilder.append(timestamp);
         return stringBuilder.toString();
+    }
+
+    public void setProductString(){
+      StringBuilder stringBuilder = new StringBuilder();
+      for (int i = 0; i < products.size(); i++) {
+                stringBuilder.append(products.get(i).getName());
+                if (i < products.size() - 1) {
+                    stringBuilder.append(", ");
+                }
+       }
+
+     productString = stringBuilder.toString();
     }
 }
