@@ -51,49 +51,26 @@ public class Program {
 	}
 	
 	public static boolean menu(int choice, boolean chivato) {
-		switch(choice) {
-			case 1:
-				flowerShopCreation();
-				break;
-			case 2:
-				addTree(fs1, pedirString("Introduce el nombre del arbol"), pedirDouble("Introduce el precio"), pedirDouble("Introduce la altura"));
-				break;
-			case 3:
-				addFlower(fs1, pedirString("Introduce el nombre de la flor"), pedirDouble("Introduce el precio"), pedirString("Introduce el color"));
-				break;
-			case 4:
-				addDecoration(fs1, pedirString("Introduce el nombre de la decoracion"), pedirDouble("Introduce el precio"));
-				break;
-			case 5:
-				listingStock();
-				break;
-			case 6:
-				removeTree();
-				break;
-			case 7:
-				removeFlower();
-				break;
-			case 8:
-				removeDecoration();
-				break;
-			case 9:
-				listingStockQuantitiesV2();
-				break;
-			case 10:
-				listingTotalValue();
-				break;
-			case 11:
-				createTicket();
-				break;
-			case 12:
-				listingTickets();
-				break;
-			case 13:
-				listingTotalEarnings();
-				break;
-			case 0:
-				chivato=false;
-				break;
+		switch (choice) {
+			case 1 -> flowerShopCreation();
+			case 2 -> addTree(fs1, pedirString("Introduce el nombre del arbol"),
+					pedirDouble("Introduce el precio"),
+					pedirDouble("Introduce la altura"));
+			case 3 -> addFlower(fs1, pedirString("Introduce el nombre de la flor"),
+					pedirDouble("Introduce el precio"),
+					pedirString("Introduce el color"));
+			case 4 -> addDecoration(fs1, pedirString("Introduce el nombre de la decoracion"),
+					pedirDouble("Introduce el precio"));
+			case 5 -> listingStock();
+			case 6 -> removeTree();
+			case 7 -> removeFlower();
+			case 8 -> removeDecoration();
+			case 9 -> listingStockQuantitiesV2();
+			case 10 -> listingTotalValue();
+			case 11 -> createTicket();
+			case 12 -> listingTickets();
+			case 13 -> listingTotalEarnings();
+			case 0 -> chivato = false;
 		}
 		return chivato;
 	}
