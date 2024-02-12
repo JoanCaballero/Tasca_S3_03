@@ -4,6 +4,8 @@ import java.util.Scanner;
 
 import org.example.FlowerShop;
 import org.example.ProductFactory;
+import org.example.Entities.Decoration;
+import org.example.Entities.Flower;
 import org.example.Entities.Product;
 import org.example.Entities.Tree;
 
@@ -13,6 +15,8 @@ public class Program {
 	private static ProductFactory productFactory = new ProductFactory();
 	
 	public static void program() {
+		
+		System.out.println("Bienvenido a la aplicacion de gestion de floristerias");
 		
 		boolean chivato = true;
 		
@@ -25,7 +29,7 @@ public class Program {
 		Scanner sc = new Scanner(System.in);
 		
 		System.out.println("""
-				Bienvenido a la aplicacion de gestion de floristerias.
+				
 				Seleccione una de las opciones disponibles:
 				1. Crear floristeria
 				2. Añadir Arbol
@@ -49,7 +53,7 @@ public class Program {
 	public static boolean menu(int choice, boolean chivato) {
 		switch(choice) {
 			case 1:
-				flowerShopCreation(pedirString("Introduce el nombre de la floristeria"));
+				flowerShopCreation();
 				break;
 			case 2:
 				addTree(fs1, pedirString("Introduce el nombre del arbol"), pedirDouble("Introduce el precio"), pedirDouble("Introduce la altura"));
@@ -82,6 +86,7 @@ public class Program {
 				createTicket();
 				break;
 			case 12:
+				listingTickets();
 				break;
 			case 13:
 				listingTotalEarnings();
@@ -93,15 +98,19 @@ public class Program {
 		return chivato;
 	}
 	
-	public static void flowerShopCreation(String name) {
-		fs1.setName(name);
-		System.out.println("Se ha creado la floristeria correctamente");
+	public static void flowerShopCreation() {
+		if (fs1.getName().isBlank()) {
+			fs1.setName(pedirString("Introduce el nombre de la floristeria"));
+			System.out.println("Se ha creado la floristeria correctamente");
+		} else {
+			System.out.println("Ya existe una floristeria. Introduce productos.");
+		}
 	}
 	
 	public static void addTree(FlowerShop fs1, String name, double price, double height) {
 		Product p = productFactory.createProduct("Tree", name, price, height);
 		fs1.addProductStock(p);
-		System.out.println("Se ha creado el arbol correctamente");
+		System.out.println("Se ha creado el " + p.getName() + " correctamente");
 	}
 	
 	public static void removeTree() {
@@ -118,9 +127,13 @@ public class Program {
 		
 		if (indexPosition!=-1) {
 			Product p = fs1.getProductList().get(indexPosition);
-			fs1.removeProductStock(p);
-			
-			System.out.println("Se ha eliminado el arbol correctamente");
+		
+			if (!(p instanceof Tree)) {
+				System.out.println("No estas seleccionando un arbol");
+			} else {
+				fs1.removeProductStock(p);
+				System.out.println("Se ha eliminado el arbol correctamente");
+			}
 		}
 	}
 	
@@ -128,7 +141,7 @@ public class Program {
 	public static void addFlower(FlowerShop fs1, String name, double price, String color) {
 		Product p = productFactory.createProduct("Flower", name, price, color);
 		fs1.addProductStock(p);
-		System.out.println("Se ha creado la flor correctamente");
+		System.out.println("Se ha creado la " + p.getName() + " correctamente");
 	}
 	
 	public static void removeFlower() {
@@ -142,12 +155,16 @@ public class Program {
 		int id = sc.nextInt();
 		
 		int indexPosition = searchProductId(id);
-		
+				
 		if (indexPosition!=-1) {
 			Product p = fs1.getProductList().get(indexPosition);
-			fs1.removeProductStock(p);
-			
-			System.out.println("Se ha eliminado la flor correctamente");
+		
+			if (!(p instanceof Flower)) {
+				System.out.println("No estas seleccionando una flor");
+			} else {
+				fs1.removeProductStock(p);
+				System.out.println("Se ha eliminado la flor correctamente");
+			}
 		}
 	}
 	
@@ -178,9 +195,13 @@ public class Program {
 		
 		if (indexPosition!=-1) {
 			Product p = fs1.getProductList().get(indexPosition);
-			fs1.removeProductStock(p);
-			
-			System.out.println("Se ha eliminado la decoracion correctamente");
+		
+			if (!(p instanceof Decoration)) {
+				System.out.println("No estas seleccionando un objeto decoracion");
+			} else {
+				fs1.removeProductStock(p);
+				System.out.println("Se ha eliminado el objeto decoracion correctamente");
+			}
 		}
 	}
 	
@@ -218,6 +239,8 @@ public class Program {
 	}
 
 	public static void createTicket(){ fs1.createTicket();}
+	
+	public static void listingTickets() {fs1.showTickets(); }
 	
 	// Metodo para pedir String 
 	static String pedirString(String mensaje) { 

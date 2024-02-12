@@ -1,0 +1,1 @@
+ID = 1 | [pino] | TOTAL: 100.0€ Fecha de la compra: 12/02/2024 10:42:45
