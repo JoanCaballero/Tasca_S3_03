@@ -5,7 +5,7 @@ import org.example.Entities.Flower;
 import org.example.Entities.Product;
 import org.example.Entities.Tree;
 import org.example.Service.Program;
-import org.example.txtConnection.TxtConnection;
+import org.example.txtConnection.TxtDAOImpl;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -19,6 +19,7 @@ public class FlowerShop {
     private double totalEarnings;
     private double totalStockValue;
     private Map<String, Integer> productMap;
+	private TxtDAOImpl txtDAOImpl;
 
     public FlowerShop(String name){
         this.name = name;
@@ -28,6 +29,7 @@ public class FlowerShop {
         this.totalStockValue = 0;
         this.productMap = new HashMap<>();
         initializeMap();
+		txtDAOImpl = new TxtDAOImpl();
     }
     
     
@@ -178,10 +180,10 @@ public class FlowerShop {
 			addTicket(ticket);
 			System.out.println("Compra realizada correctamente.");
 			if (ticketList.size()==1) {
-				TxtConnection.txtDbCreation();
-				TxtConnection.txtDbWriting(ticket);
+				txtDAOImpl.txtDbCreation();
+				txtDAOImpl.insertTicket(ticket);
 			} else {
-				TxtConnection.txtDbWriting(ticket);
+				txtDAOImpl.insertTicket(ticket);
 			}
 		}
 	}

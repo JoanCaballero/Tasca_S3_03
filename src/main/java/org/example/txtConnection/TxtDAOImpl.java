@@ -7,28 +7,22 @@ import java.io.FileNotFoundException;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.util.List;
 
-public class TxtConnection {
+public class TxtDAOImpl implements TicketDAO{
 	
 	private static File flowerShopDb;
 	
-	public static void txtDbCreation() {
+	public void txtDbCreation() {
 		flowerShopDb = new File("FlowerShopDB.txt");
-		PrintWriter salida = null;
-		
-		try {
-			salida = new PrintWriter(flowerShopDb);
+
+		try (PrintWriter salida = new PrintWriter(flowerShopDb)) {
 			System.out.println("La base de datos para almacenar los tickets se ha creado correctamente");
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();
-		} finally {
-			salida.close();
 		}
-		
 	}
 	
-	public static void txtDbWriting(Ticket ticket) {
+	public void insertTicket(Ticket ticket) {
 				
 		FileWriter fw = null;
 		
