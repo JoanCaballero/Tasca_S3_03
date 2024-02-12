@@ -4,8 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6f2d196c-7ffa-49f1-b793-52d137e35fff" name="Changes" comment="Crear Ticket, correccion encontrar product by id">
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Service/Program.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Service/Program.java" afterDir="false" />
+    <list default="true" id="6f2d196c-7ffa-49f1-b793-52d137e35fff" name="Changes" comment="Pequeños arreglos">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FlowerShopDB.txt" beforeDir="false" afterPath="$PROJECT_DIR$/FlowerShopDB.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Ticket.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Ticket.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -45,9 +47,32 @@
   &quot;keyToString&quot;: {
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/formacio/Desktop/JC/ProvaNivell_JoanCaballero&quot;
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/formacio/Desktop/JC/ProvaNivell_JoanCaballero&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.40344828&quot;
   }
 }</component>
+  <component name="RunManager">
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="org.example.Main" />
+      <module name="Tasca_S3_03.main" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.example.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.Main" />
+      </list>
+    </recent_temporary>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -113,7 +138,28 @@
       <option name="project" value="LOCAL" />
       <updated>1707307563196</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="Total Earnings">
+      <created>1707307803443</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1707307803443</updated>
+    </task>
+    <task id="LOCAL-00010" summary="Total Earnings">
+      <created>1707310619985</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1707310619985</updated>
+    </task>
+    <task id="LOCAL-00011" summary="Pequeños arreglos">
+      <created>1707396873778</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1707396873778</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -133,6 +179,8 @@
     <MESSAGE value="FlowerShop inacabada" />
     <MESSAGE value="FlowerShop &quot;acabada&quot;" />
     <MESSAGE value="Crear Ticket, correccion encontrar product by id" />
-    <option name="LAST_COMMIT_MESSAGE" value="Crear Ticket, correccion encontrar product by id" />
+    <MESSAGE value="Total Earnings" />
+    <MESSAGE value="Pequeños arreglos" />
+    <option name="LAST_COMMIT_MESSAGE" value="Pequeños arreglos" />
   </component>
 </project>

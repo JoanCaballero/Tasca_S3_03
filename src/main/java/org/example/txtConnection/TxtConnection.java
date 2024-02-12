@@ -13,13 +13,13 @@ public class TxtConnection {
 	
 	private static File flowerShopDb;
 	
-	public void txtDbCreation() {
+	public static void txtDbCreation() {
 		flowerShopDb = new File("FlowerShopDB.txt");
 		PrintWriter salida = null;
 		
 		try {
 			salida = new PrintWriter(flowerShopDb);
-			System.out.println("La base de datos se ha creado correctamente");
+			System.out.println("La base de datos para almacenar los tickets se ha creado correctamente");
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();
 		} finally {
@@ -28,17 +28,14 @@ public class TxtConnection {
 		
 	}
 	
-	public void txtDbWriting(List<Ticket> ticketList) {
-		
-		txtDbCreation();
-		
+	public static void txtDbWriting(Ticket ticket) {
+				
 		FileWriter fw = null;
 		
 		try {
-			fw = new FileWriter(flowerShopDb, false); // false para que se cree un nuevo archivo
-			for (int i = 0; i < ticketList.size(); i++) {
-				fw.write(ticketList.get(i).TicketStringBuilder());
-			}
+			fw = new FileWriter(flowerShopDb, true); // false para que se cree un nuevo archivo
+				fw.write(ticket.TicketStringBuilder() + "\n");
+			
 			System.out.println("El ticket se ha creado correctamete");
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();
