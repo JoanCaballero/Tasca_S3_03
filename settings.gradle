@@ -1,2 +1,5 @@
 rootProject.name = 'Tasca_S3_03'
+include 'Tasca_S3_03_N2'
+include 'Tasca_S3_03_N2'
+include 'Tasca_S3_03_N1'
 

@@ -1,11 +1,14 @@
 package org.example.Service;
 
-import java.util.Scanner;
-
-import org.example.FlowerShop;
-import org.example.ProductFactory;
+import org.example.Entities.Decoration;
+import org.example.Entities.Flower;
 import org.example.Entities.Product;
 import org.example.Entities.Tree;
+import org.example.FlowerShop;
+import org.example.ProductFactory;
+
+import java.util.InputMismatchException;
+import java.util.Scanner;
 
 public class Program {
 	
@@ -13,6 +16,8 @@ public class Program {
 	private static ProductFactory productFactory = new ProductFactory();
 	
 	public static void program() {
+		
+		System.out.println("Bienvenido a la aplicacion de gestion de floristerias");
 		
 		boolean chivato = true;
 		
@@ -25,7 +30,7 @@ public class Program {
 		Scanner sc = new Scanner(System.in);
 		
 		System.out.println("""
-				Bienvenido a la aplicacion de gestion de floristerias.
+				
 				Seleccione una de las opciones disponibles:
 				1. Crear floristeria
 				2. Añadir Arbol
@@ -47,61 +52,43 @@ public class Program {
 	}
 	
 	public static boolean menu(int choice, boolean chivato) {
-		switch(choice) {
-			case 1:
-				flowerShopCreation(pedirString("Introduce el nombre de la floristeria"));
-				break;
-			case 2:
-				addTree(fs1, pedirString("Introduce el nombre del arbol"), pedirDouble("Introduce el precio"), pedirDouble("Introduce la altura"));
-				break;
-			case 3:
-				addFlower(fs1, pedirString("Introduce el nombre de la flor"), pedirDouble("Introduce el precio"), pedirString("Introduce el color"));
-				break;
-			case 4:
-				addDecoration(fs1, pedirString("Introduce el nombre de la decoracion"), pedirDouble("Introduce el precio"));
-				break;
-			case 5:
-				listingStock();
-				break;
-			case 6:
-				removeTree();
-				break;
-			case 7:
-				removeFlower();
-				break;
-			case 8:
-				removeDecoration();
-				break;
-			case 9:
-				listingStockQuantitiesV2();
-				break;
-			case 10:
-				listingTotalValue();
-				break;
-			case 11:
-				createTicket();
-				break;
-			case 12:
-				break;
-			case 13:
-				listingTotalEarnings();
-				break;
-			case 0:
-				chivato=false;
-				break;
+		switch (choice) {
+			case 1 -> flowerShopCreation();
+			case 2 -> addTree(fs1, pedirString("Introduce el nombre del arbol"),
+					pedirDouble("Introduce el precio"),
+					pedirDouble("Introduce la altura"));
+			case 3 -> addFlower(fs1, pedirString("Introduce el nombre de la flor"),
+					pedirDouble("Introduce el precio"),
+					pedirString("Introduce el color"));
+			case 4 -> addDecoration(fs1, pedirString("Introduce el nombre de la decoracion"),
+					pedirDouble("Introduce el precio"));
+			case 5 -> listingStock();
+			case 6 -> removeTree();
+			case 7 -> removeFlower();
+			case 8 -> removeDecoration();
+			case 9 -> listingStockQuantitiesV2();
+			case 10 -> listingTotalValue();
+			case 11 -> createTicket();
+			case 12 -> listingTickets();
+			case 13 -> listingTotalEarnings();
+			case 0 -> chivato = false;
 		}
 		return chivato;
 	}
 	
-	public static void flowerShopCreation(String name) {
-		fs1.setName(name);
-		System.out.println("Se ha creado la floristeria correctamente");
+	public static void flowerShopCreation() {
+		if (fs1.getName().isBlank()) {
+			fs1.setName(pedirString("Introduce el nombre de la floristeria"));
+			System.out.println("Se ha creado la floristeria correctamente");
+		} else {
+			System.out.println("Ya existe una floristeria. Introduce productos.");
+		}
 	}
 	
 	public static void addTree(FlowerShop fs1, String name, double price, double height) {
 		Product p = productFactory.createProduct("Tree", name, price, height);
 		fs1.addProductStock(p);
-		System.out.println("Se ha creado el arbol correctamente");
+		System.out.println("Se ha creado el " + p.getName() + " correctamente");
 	}
 	
 	public static void removeTree() {
@@ -118,9 +105,13 @@ public class Program {
 		
 		if (indexPosition!=-1) {
 			Product p = fs1.getProductList().get(indexPosition);
-			fs1.removeProductStock(p);
-			
-			System.out.println("Se ha eliminado el arbol correctamente");
+		
+			if (!(p instanceof Tree)) {
+				System.out.println("No estas seleccionando un arbol");
+			} else {
+				fs1.removeProductStock(p);
+				System.out.println("Se ha eliminado el arbol correctamente");
+			}
 		}
 	}
 	
@@ -128,7 +119,7 @@ public class Program {
 	public static void addFlower(FlowerShop fs1, String name, double price, String color) {
 		Product p = productFactory.createProduct("Flower", name, price, color);
 		fs1.addProductStock(p);
-		System.out.println("Se ha creado la flor correctamente");
+		System.out.println("Se ha creado la " + p.getName() + " correctamente");
 	}
 	
 	public static void removeFlower() {
@@ -142,12 +133,16 @@ public class Program {
 		int id = sc.nextInt();
 		
 		int indexPosition = searchProductId(id);
-		
+				
 		if (indexPosition!=-1) {
 			Product p = fs1.getProductList().get(indexPosition);
-			fs1.removeProductStock(p);
-			
-			System.out.println("Se ha eliminado la flor correctamente");
+		
+			if (!(p instanceof Flower)) {
+				System.out.println("No estas seleccionando una flor");
+			} else {
+				fs1.removeProductStock(p);
+				System.out.println("Se ha eliminado la flor correctamente");
+			}
 		}
 	}
 	
@@ -178,9 +173,13 @@ public class Program {
 		
 		if (indexPosition!=-1) {
 			Product p = fs1.getProductList().get(indexPosition);
-			fs1.removeProductStock(p);
-			
-			System.out.println("Se ha eliminado la decoracion correctamente");
+		
+			if (!(p instanceof Decoration)) {
+				System.out.println("No estas seleccionando un objeto decoracion");
+			} else {
+				fs1.removeProductStock(p);
+				System.out.println("Se ha eliminado el objeto decoracion correctamente");
+			}
 		}
 	}
 	
@@ -219,8 +218,10 @@ public class Program {
 
 	public static void createTicket(){ fs1.createTicket();}
 	
+	public static void listingTickets() {fs1.showTickets(); }
+	
 	// Metodo para pedir String 
-	static String pedirString(String mensaje) { 
+	static String pedirString(String mensaje) {
 		Scanner sc = new Scanner(System.in);
 		System.out.println(mensaje);
 		return sc.nextLine();
@@ -229,14 +230,36 @@ public class Program {
 	// Metodo para pedir numero
 	public static int pedirInt(String mensaje) {
 		Scanner sc = new Scanner(System.in);
-		System.out.println(mensaje);
-		return sc.nextInt();
+		int num = 0;
+		boolean correct = false;
+		do{
+			System.out.println(mensaje);
+			try{
+				num = sc.nextInt();
+				correct = true;
+			}catch (InputMismatchException e){
+				e.getStackTrace();
+			}
+			sc.nextLine();
+		}while(!correct);
+		return num;
 	}
 	
 	// Metodo para pedir double
 	static double pedirDouble(String mensaje) {
 		Scanner sc = new Scanner(System.in);
-		System.out.println(mensaje);
-		return sc.nextDouble();
+		double num = 0.0;
+		boolean correct = false;
+		do{
+			System.out.println(mensaje);
+			try{
+				num = sc.nextDouble();
+				correct = true;
+			}catch (InputMismatchException e){
+				e.getStackTrace();
+			}
+			sc.nextLine();
+		}while(!correct);
+		return num;
 	}
 }

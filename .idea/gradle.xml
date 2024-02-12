@@ -9,6 +9,8 @@
         <option name="modules">
           <set>
             <option value="$PROJECT_DIR$" />
+            <option value="$PROJECT_DIR$/Tasca_S3_03_N1" />
+            <option value="$PROJECT_DIR$/Tasca_S3_03_N2" />
           </set>
         </option>
       </GradleProjectSettings>

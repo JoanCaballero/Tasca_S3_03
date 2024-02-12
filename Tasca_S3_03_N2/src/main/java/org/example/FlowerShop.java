@@ -5,6 +5,7 @@ import org.example.Entities.Flower;
 import org.example.Entities.Product;
 import org.example.Entities.Tree;
 import org.example.Service.Program;
+import org.example.MySQLConnection.SQLDAOImpl;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -18,6 +19,7 @@ public class FlowerShop {
     private double totalEarnings;
     private double totalStockValue;
     private Map<String, Integer> productMap;
+	private SQLDAOImpl instanceSQLDAOImpl;
 
     public FlowerShop(String name){
         this.name = name;
@@ -27,6 +29,8 @@ public class FlowerShop {
         this.totalStockValue = 0;
         this.productMap = new HashMap<>();
         initializeMap();
+		instanceSQLDAOImpl = new SQLDAOImpl();
+		instanceSQLDAOImpl.mySQLDbCreation();
     }
     
     
@@ -125,34 +129,43 @@ public class FlowerShop {
 
 	public void createTicket(){
 		Ticket ticket = new Ticket();
-		int opcio = Program.pedirInt("""
-				1.- Añadir producto a la lista.
-				2.- Eliminar producto de la lista.
-				3.- Mostrar lista.
-				4.- Finalizar compra.""");
-		switch(opcio){
-			case 1-> addTicketProduct(ticket);
-			case 2-> removeTicketProduct(ticket);
-			case 3-> showTicketProductList(ticket);
-			case 4-> finalizeTicket(ticket);
-			default -> System.out.println("Valor introducido incorrectamente.");
-		}
+		int opcio;
+		do {
+			opcio = Program.pedirInt("""
+					1.- Añadir producto a la lista.
+					2.- Eliminar producto de la lista.
+					3.- Mostrar lista de productos seleccionados.
+					4.- Finalizar compra.""");
+			switch (opcio) {
+				case 1 -> addTicketProduct(ticket);
+				case 2 -> removeTicketProduct(ticket);
+				case 3 -> showTicketProductList(ticket);
+				case 4 -> finalizeTicket(ticket);
+				default -> System.out.println("Valor introducido incorrectamente.");
+			}
+		}while(opcio!=4);
 	}
 	public void addTicketProduct(Ticket ticket) {
 		System.out.println("A continuación te muestro el listado de productos a la venta:");
 		productStockList();
 		int indice = Program.searchProductId(Program.pedirInt("Añade el producto a tu compra mediante el ID."));
-		if(indice != -1){
-			Product p = productList.get(indice);
+		Product p = productList.get(indice);
+		if(indice != -1 && !ticket.getProducts().contains(p)){
 			ticket.addProduct(p);
+			System.out.println("Producto añadido correctamente.");
+		}else{
+			System.out.println("El producto no se ha podido añadir a la lista.");
 		}
 	}
 
 	public void removeTicketProduct(Ticket ticket){
 		int indice = Program.searchProductId(Program.pedirInt("Escribe el ID del producto que quieras eliminar de tu compra."));
-		if(indice != -1) {
-			Product p = productList.get(indice);
+		Product p = productList.get(indice);
+		if(indice != -1 && ticket.getProducts().contains(p)) {
 			ticket.removeProduct(p);
+			System.out.println("Producto elminado correctamente.");
+		}else{
+			System.out.println("No se ha podido elminiar el producto.");
 		}
 	}
 
@@ -162,10 +175,12 @@ public class FlowerShop {
 
 	public void finalizeTicket(Ticket ticket){
 		for(Product p : ticket.getProducts()){
-			productList.remove(Program.searchProductId(p.getId()));
+			removeProductStock(p);
 		}
 		if(!ticket.getProducts().isEmpty()) {
-			ticketList.add(ticket);
+			addTicket(ticket);
+			System.out.println("Compra realizada correctamente.");
+			instanceSQLDAOImpl.insertTicket(ticket);
 		}
 	}
 
@@ -182,7 +197,7 @@ public class FlowerShop {
     }
 
     public void showTickets(){
-        ticketList.forEach(System.out::println);
+		instanceSQLDAOImpl.getTickets().forEach(t-> System.out.println("ID: " + t.getId() + " - Total Value: " + t.getPrice() + "€."));
     }
     
     
