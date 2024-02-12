@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6f2d196c-7ffa-49f1-b793-52d137e35fff" name="Changes" comment="Total Earnings">
+    <list default="true" id="6f2d196c-7ffa-49f1-b793-52d137e35fff" name="Changes" comment="Pequeños arreglos">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/FlowerShopDB.txt" beforeDir="false" afterPath="$PROJECT_DIR$/FlowerShopDB.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Ticket.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Ticket.java" afterDir="false" />
@@ -152,7 +152,14 @@
       <option name="project" value="LOCAL" />
       <updated>1707310619985</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="Pequeños arreglos">
+      <created>1707396873778</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1707396873778</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -173,6 +180,7 @@
     <MESSAGE value="FlowerShop &quot;acabada&quot;" />
     <MESSAGE value="Crear Ticket, correccion encontrar product by id" />
     <MESSAGE value="Total Earnings" />
-    <option name="LAST_COMMIT_MESSAGE" value="Total Earnings" />
+    <MESSAGE value="Pequeños arreglos" />
+    <option name="LAST_COMMIT_MESSAGE" value="Pequeños arreglos" />
   </component>
 </project>

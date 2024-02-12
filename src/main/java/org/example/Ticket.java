@@ -13,7 +13,7 @@ public class Ticket {
     private List<Product> products;
 
     private double price;
-    private String productString;
+    private String productString, creationTime;
 
     public Ticket(int id, String productString, double price){
         this.id = id;
@@ -26,6 +26,7 @@ public class Ticket {
         id = idCounter;
         idCounter++;
         products = new ArrayList<>();
+        creationTime = creationTime();
     }
 
     public int getId() {
@@ -68,12 +69,8 @@ public class Ticket {
         StringBuilder stringBuilder = new StringBuilder();
         setProductString();
         stringBuilder.append("ID = ").append(this.id).append(" | [").append(this.productString);
-
         stringBuilder.append("] | TOTAL: ").append(((float) Math.round(this.price * 100) / 100)).append("€");
-        Timestamp timestamp = new Timestamp(System.currentTimeMillis());
-//        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("dd/MM/yyyy");
-//        stringBuilder.append(" Fecha de la compra: ").append(simpleDateFormat.format(timestamp));
-//        stringBuilder.append(timestamp);
+        stringBuilder.append(creationTime);
         return stringBuilder.toString();
     }
 
@@ -87,5 +84,11 @@ public class Ticket {
        }
 
      productString = stringBuilder.toString();
+    }
+
+    private String creationTime(){
+        Timestamp timestamp = new Timestamp(System.currentTimeMillis());
+        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
+        return (" Fecha de la compra: " + simpleDateFormat.format(timestamp));
     }
 }
