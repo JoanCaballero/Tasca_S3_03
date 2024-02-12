@@ -4,11 +4,36 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6f2d196c-7ffa-49f1-b793-52d137e35fff" name="Changes" comment="Implementacion DAO">
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/txtConnection/TicketDAO.java" afterDir="false" />
+    <list default="true" id="6f2d196c-7ffa-49f1-b793-52d137e35fff" name="Changes" comment="Nivell 2 Tot OK Comprobar ID si modifiques desde SQL">
+      <change afterPath="$PROJECT_DIR$/Tasca_S3_03_N1/build.gradle" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Tasca_S3_03_N2/build.gradle" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Tasca_S3_03_N2/src/main/java/org/example/Entities/Decoration.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Tasca_S3_03_N2/src/main/java/org/example/Entities/Flower.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Tasca_S3_03_N2/src/main/java/org/example/Entities/Product.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Tasca_S3_03_N2/src/main/java/org/example/Entities/Tree.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Tasca_S3_03_N2/src/main/java/org/example/FlowerShop.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Tasca_S3_03_N2/src/main/java/org/example/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Tasca_S3_03_N2/src/main/java/org/example/MySQLConnection/SQLDAOImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Tasca_S3_03_N2/src/main/java/org/example/MySQLConnection/TicketDAO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Tasca_S3_03_N2/src/main/java/org/example/MySQLConnection/mySQLConnection.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Tasca_S3_03_N2/src/main/java/org/example/ProductFactory.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Tasca_S3_03_N2/src/main/java/org/example/Service/Program.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Tasca_S3_03_N2/src/main/java/org/example/Ticket.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/FlowerShop.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/FlowerShop.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/txtConnection/TxtConnection.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/txtConnection/TxtDAOImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FlowerShopDB.txt" beforeDir="false" afterPath="$PROJECT_DIR$/FlowerShopDB.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/settings.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/settings.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Entities/Decoration.java" beforeDir="false" afterPath="$PROJECT_DIR$/Tasca_S3_03_N1/src/main/java/org/example/Entities/Decoration.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Entities/Flower.java" beforeDir="false" afterPath="$PROJECT_DIR$/Tasca_S3_03_N1/src/main/java/org/example/Entities/Flower.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Entities/Product.java" beforeDir="false" afterPath="$PROJECT_DIR$/Tasca_S3_03_N1/src/main/java/org/example/Entities/Product.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Entities/Tree.java" beforeDir="false" afterPath="$PROJECT_DIR$/Tasca_S3_03_N1/src/main/java/org/example/Entities/Tree.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/FlowerShop.java" beforeDir="false" afterPath="$PROJECT_DIR$/Tasca_S3_03_N1/src/main/java/org/example/FlowerShop.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/Tasca_S3_03_N1/src/main/java/org/example/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/ProductFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/Tasca_S3_03_N1/src/main/java/org/example/ProductFactory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Service/Program.java" beforeDir="false" afterPath="$PROJECT_DIR$/Tasca_S3_03_N1/src/main/java/org/example/Service/Program.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Ticket.java" beforeDir="false" afterPath="$PROJECT_DIR$/Tasca_S3_03_N1/src/main/java/org/example/Ticket.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/txtConnection/TicketDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/Tasca_S3_03_N1/src/main/java/org/example/txtConnection/TicketDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/txtConnection/TxtDAOImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/Tasca_S3_03_N1/src/main/java/org/example/txtConnection/TxtDAOImpl.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -20,11 +45,31 @@
       <ProjectState />
     </projectState>
   </component>
+  <component name="ExternalProjectsManager">
+    <system id="GRADLE">
+      <state>
+        <task path="$PROJECT_DIR$">
+          <activation />
+        </task>
+        <projects_view>
+          <tree_state>
+            <expand>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="Tasca_S3_03" type="f1a62948:ProjectNode" />
+              </path>
+            </expand>
+            <select />
+          </tree_state>
+        </projects_view>
+      </state>
+    </system>
+  </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="Interface" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -45,17 +90,26 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/formacio/Desktop/JC/ProvaNivell_JoanCaballero&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.40344828&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "jdk.selected.JAVA_MODULE": "corretto-16",
+    "last_opened_file_path": "C:/Users/formacio/Desktop/JC/Tasca_S3_03/Tasca_S3_03_N2/src/main/java/org/example",
+    "project.structure.last.edited": "Project",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.40344828"
   }
-}</component>
-  <component name="RunManager">
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\formacio\Desktop\JC\Tasca_S3_03\Tasca_S3_03_N2\src\main\java\org\example" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\formacio\Desktop\JC\Tasca_S3_03\Tasca_S3_03_N1\src" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Application.org.example.Main">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="org.example.Main" />
       <module name="Tasca_S3_03.main" />
@@ -69,8 +123,80 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="org.example.Main (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="org.example.Main" />
+      <module name="Tasca_S3_03.Tasca_S3_03_N1.main" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.example.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="org.example.Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="org.example.Main" />
+      <module name="Tasca_S3_03.Tasca_S3_03_N2.main" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.example.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Tasca_S3_03 [dependencies]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value="dependencies" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <method v="2" />
+    </configuration>
+    <configuration name="Tasca_S3_03 [test]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value="test" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <method v="2" />
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.org.example.Main (1)" />
+        <item itemvalue="Gradle.Tasca_S3_03 [test]" />
+        <item itemvalue="Gradle.Tasca_S3_03 [dependencies]" />
+        <item itemvalue="Application.org.example.Main" />
         <item itemvalue="Application.Main" />
       </list>
     </recent_temporary>
@@ -161,7 +287,14 @@
       <option name="project" value="LOCAL" />
       <updated>1707396873778</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="Implementacion DAO">
+      <created>1707732267927</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1707732267927</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -184,6 +317,7 @@
     <MESSAGE value="Total Earnings" />
     <MESSAGE value="Pequeños arreglos" />
     <MESSAGE value="Implementacion DAO" />
-    <option name="LAST_COMMIT_MESSAGE" value="Implementacion DAO" />
+    <MESSAGE value="Nivell 2 Tot OK Comprobar ID si modifiques desde SQL" />
+    <option name="LAST_COMMIT_MESSAGE" value="Nivell 2 Tot OK Comprobar ID si modifiques desde SQL" />
   </component>
 </project>
