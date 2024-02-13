@@ -1,13 +1,14 @@
 package org.example.MongoDBConnection;
 
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.SQLException;
+
+import com.mongodb.client.MongoClient;
+import com.mongodb.client.MongoClients;
+import com.mongodb.client.MongoDatabase;
 
 public class mongoDBConnection {
 
-    public static Connection getConnection() throws SQLException, ClassNotFoundException {
-        // Class.forName("com.mysql.jdbc.Driver");
-        return DriverManager.getConnection("jdbc:mysql://localhost:3306", "root", "1234");
+    public static MongoDatabase getConnection() {
+        MongoClient client = MongoClients.create("mongodb://localhost:27017/flowershop");
+        return client.getDatabase("Flowershop");
     }
 }
