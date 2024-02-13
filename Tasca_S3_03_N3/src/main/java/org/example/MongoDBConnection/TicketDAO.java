@@ -6,6 +6,6 @@ import java.util.List;
 
 public interface TicketDAO {
     void insertTicket(Ticket ticket);
-    void mySQLDbCreation();
+    void mongoDBCreation();
     List<Ticket> getTickets();
 }

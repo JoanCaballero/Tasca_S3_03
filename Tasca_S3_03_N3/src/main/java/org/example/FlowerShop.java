@@ -30,7 +30,7 @@ public class FlowerShop {
         this.productMap = new HashMap<>();
         initializeMap();
 		instanceMongoDBDAOImpl = new MongoDBDAOImpl();
-		instanceMongoDBDAOImpl.mySQLDbCreation();
+		instanceMongoDBDAOImpl.mongoDBCreation();
     }
     
     
